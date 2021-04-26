@@ -3,6 +3,7 @@ $(".focus").hide();
 import fn from "./functions.js";
 import teste from "./teste.js";
 
+
 fn.GetHTML("#teste");
 teste.teste();
 // fn.ViewHTML("#htmlView", "./html/conteudo1.html");

@@ -4,6 +4,7 @@ var couter;
 var timer;
 var timerOn;
 
+
 count = 0;
 $("#contador").html(count);
 couter = () => {
@@ -11,13 +12,11 @@ couter = () => {
   $("#contador").html(count);
 };
 
-timerOn = false;
-
 $("#testeConteudo2").html("isso é um teste de conteudo dinamico 2");
 
 $("#iniciar").on("click", () => {
-  if (timerOn) return;
-  if (!timerOn) timer = setInterval(couter, 1000);
+  if(timer && timerOn) return
+  timer = setInterval(couter, 1000);
   timerOn = true;
 });
 
@@ -30,3 +29,7 @@ $("#resetar").on("click", () => {
   count = 0;
   $("#contador").html(count);
 });
+
+setInterval(() => {
+  console.log(timer)
+}, 100);
